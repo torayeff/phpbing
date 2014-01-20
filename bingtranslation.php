@@ -79,6 +79,8 @@
 		}
 	}
 	
+	
+	//usage example
 	$bt = new BingTranslation($your_client_id, $your_secret);
 	echo $bt->translate('Hello', 'en', 'ru');
 ?>
