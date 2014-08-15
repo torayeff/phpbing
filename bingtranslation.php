@@ -37,7 +37,7 @@
 		public function translate($word, $from, $to)
 		{
 			$access_token = $this->get_access_token();
-			$url = 'http://api.microsofttranslator.com/V2/Http.svc/Translate?text='.$word.'&from='.$from.'&to='.$to;
+			$url = 'http://api.microsofttranslator.com/V2/Http.svc/Translate?text='. urlencode($word) .'&from='.$from.'&to='.$to;
 			
 			$ch = curl_init();
 			curl_setopt($ch, CURLOPT_URL, $url); 
@@ -62,7 +62,7 @@
 			
 			foreach($tos as $to)
 			{
-				$url = 'http://api.microsofttranslator.com/V2/Http.svc/Translate?text=hello&from='.$from.'&to='.$to;
+				$url = 'http://api.microsofttranslator.com/V2/Http.svc/Translate?text='. urlencode($word) .'&from='.$from.'&to='.$to;
 				
 				$ch = curl_init();
 				curl_setopt($ch, CURLOPT_URL, $url); 
